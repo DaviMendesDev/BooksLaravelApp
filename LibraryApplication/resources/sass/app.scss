@@ -1,0 +1,34 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    text-overflow: ellipsis;
+}
+
+body {
+    background-color: $body-bg;
+}
+
+input[type="file"] {
+    opacity: 0;
+}
+
+.container,
+.container-fluid {
+    background-color: white;
+}
+
+.navbar-brand {
+    color: red;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #d4d1d1;
+    transition: color .3s;
+}

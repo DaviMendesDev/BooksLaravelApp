@@ -13,9 +13,9 @@ class Book extends Migration
      */
     public function up()
     {
-        Schema::create('book', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_publisher')->references('id')->on('user');
+            $table->foreignId('id_publisher')->references('id')->on('users');
             $table->string('title', 50);
             $table->string('cover')->nullable();    // path to the cover image
             $table->string('synopsis', 500);
@@ -25,8 +25,9 @@ class Book extends Migration
             $table->string('edition', 20);
             $table->year('year');
             $table->integer('page_numbers');
+            $table->integer('favorites')->default(0);
             $table->timestamps();
-            $table->softDeletes();
+            $table->softDeletes()->nullable();
         });
     }
 
@@ -37,6 +38,6 @@ class Book extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('book');
+        Schema::dropIfExists('books');
     }
 }

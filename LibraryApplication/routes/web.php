@@ -15,16 +15,30 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Routes with the '/books' prefix
 Route::prefix('/books')->group(function () {
-    Route::post('/new', 'BooksController@saveNewBook')->middleware(['auth']);
-    Route::get('/new', 'BooksController@showSaveNewBookForm')->middleware(['auth']);
+    Route::get('/', 'BooksController@getMostTrendedBooks');
 
-    Route::get('/{id}', 'BooksController@showBook');
+    Route::group(['middleware' => ['auth']], function () {
+        Route::post('/new', 'BooksController@saveNewBook')->name('new-book');
+        Route::get('/new', 'BooksController@showSaveNewBookForm');
+
+        Route::put('/edit/{book}', 'BooksController@editBook');
+        Route::get('/edit/{book}', 'BooksController@showEditFormBook')->name('edit-book');
+
+        Route::delete('/delete/{book}', 'BooksController@deleteBook')->name('delete-book');
+        Route::get('/my-books', 'BooksController@getMyBooks')->name('my-books');
+    });
+
+    Route::get('/{book}', 'BooksController@getBook')->name('get-book');
+
+    Route::post('/search', 'BooksController@searchBook')->name('search-book');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function() {
+    return redirect('/books/');
+})->name('home');
+
+Route::get('/', function () {
+    return redirect('/books/');
+});
