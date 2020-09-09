@@ -8,7 +8,7 @@ A Laravel application with purpose to be a simple CRUD with Search
 - [PostgresSQL](https://www.postgresql.org/download/)
 
 # Setting Up Environment
-- Composer Dependencies
+## Composer Dependencies
 After get all requirements you will need get all dependencies to run the Application. 
 To do this you must enter on the Laravel project folder
 ``` /BooksLaravelApp/LibraryApplication ```
@@ -17,16 +17,16 @@ and inside that, you must run this command:
     composer install
 ```
 
-- Node Dependencies
+## Node Dependencies
 To install dependencies with node you must run this command (inside the ``` /BooksLaravelApp/LibraryApplication ``` Project Folder)
 ```
     npm install
 ```
 
-- PostgreSQL
+## PostgreSQL
 This project uses PostgreSQL as the DMS, before you use my application, you must create or set up a database (where the application will insert and retrieve data)
 
-- The ```.env``` File
+## The ```.env``` File
 Every Laravel application uses the ```.env``` file as the main config/base file, your ```.env``` file must looks like the ```.env.example``` file (especifically the DB's configuration data):
 ```
 APP_NAME="Library for you"
@@ -82,7 +82,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
 The places that starts with '<' and ends with '>' symbols, must be replaced with your own data.
 
-- Finally
+## Finally
 After you configure your environment, you must run this command to turn on your configurations on the application:
 ```
     php artisan config:cache
@@ -91,6 +91,11 @@ After you configure your environment, you must run this command to turn on your 
 The Styles on this project are written on Sass, so you need to compile it before you use, this command will compile the styles:
 ```
     npm run dev
+```
+
+Then run the migration (to setup the tables on database) with this command:
+```
+    php artisan migrate
 ```
 
 And after all this, you can run your application, using this command:
