@@ -80,7 +80,7 @@ MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 ```
-The places that starts with '<' and ends with '>' symbols, must be replaced by your own data.
+The places that starts with '<' and ends with '>' symbols, must be replaced with your own data.
 
 - Finally
 After you configure your environment, you must run this command to turn on your configurations on the application:
