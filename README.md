@@ -98,6 +98,11 @@ Then run the migration (to setup the tables on database) with this command:
     php artisan migrate
 ```
 
+After that, you need to create a symbolic link to the laravel storage, run this command:
+```
+    php artisan storage:link
+```
+
 And after all this, you can run your application, using this command:
 ```
     php artisan serve
