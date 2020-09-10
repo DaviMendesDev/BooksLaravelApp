@@ -90,7 +90,6 @@ class BooksController extends Controller
             return redirect()->back()->withErrors($validation)->withInput();
 
         $book->title = $new_book_data['title'];
-        $book->cover = $new_book_data['cover'];
         $book->synopsis = $new_book_data['synopsis'];
         $book->category = $new_book_data['category'];
         $book->publishing_company = $new_book_data['publishing_company'];

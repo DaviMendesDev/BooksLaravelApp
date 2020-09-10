@@ -103,3 +103,15 @@ And after all this, you can run your application, using this command:
     php artisan serve
 ```
 The application will run on the port ```8000``` on ```http://localhost```
+
+
+# Fixing Issues
+## The ```APP_KEY``` on the ```.env``` file
+Before you run the application, make sure that your ```APP_KEY``` on the ```.env``` file is filled, if it's not, you must run the ```php artisan key:generate``` to generate a new key to the ```APP_KEY```
+
+## The ```could not find driver``` Issue
+Before you use my Application, make sure that your ```php.ini``` file have this two lines uncommented:
+```
+extension=pdo_pgsql
+extension=pgsql
+```
