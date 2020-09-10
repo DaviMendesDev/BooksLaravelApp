@@ -5,7 +5,7 @@ A Laravel application with purpose to be a simple CRUD with Search
 # Requirements
 - [Laravel 7.x](https://laravel.com/docs/7.x/installation)
 - [Node Package Manager (NPM)](https://nodejs.org/en/download/)
-- [PostgresSQL](https://www.postgresql.org/download/)
+- [PostgreSQL](https://www.postgresql.org/download/)
 
 # Setting Up Environment
 ## Composer Dependencies
@@ -37,7 +37,7 @@ APP_URL=http://localhost
 
 LOG_CHANNEL=stack
 
-# the specifc part
+# the specific part
 # ----------------------------------------------------
 DB_CONNECTION=pgsql
 DB_HOST=<YOUR DB HOST (the localhost is '127.0.0.1')>
